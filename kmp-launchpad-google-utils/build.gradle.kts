@@ -2,13 +2,14 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kt.lint.gradle)
+    alias(libs.plugins.kotlinSerialization)
     `maven-publish`
 }
 
 kotlin {
     applyDefaultHierarchyTemplate()
     androidTarget {
-        publishLibraryVariants("release")
+        publishAllLibraryVariants()
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -22,14 +23,20 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.kmp.launchpad.domain)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.ktor.serialization.json)
+            implementation(libs.koin.core)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.google.places)
+            implementation(libs.koin.android)
+            implementation(libs.koin.compose)
+            implementation(libs.play.services.coroutines)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
