@@ -4,7 +4,6 @@ import com.bottlerocketstudios.launchpad.google.utils.data.model.Dto
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 /**
  * Represents the current conditions response when requesting only LOCAL_AQI
  *

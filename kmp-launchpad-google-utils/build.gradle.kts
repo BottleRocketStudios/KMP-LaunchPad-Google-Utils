@@ -24,12 +24,14 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kmp.launchpad.domain)
+            implementation(libs.kmp.launchpad.utils)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.ktor.serialization.json)
             implementation(libs.koin.core)
+            implementation(libs.kvault)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)

@@ -1,7 +1,7 @@
 package com.bottlerocketstudios.launchpad.google.utils.data.network.serviceImpl.airquality
 
-import com.bottlerocketstudios.launchpad.google.utils.data.model.airquality.CurrentConditionsFetchException
 import com.bottlerocketstudios.launchpad.google.utils.data.model.airquality.CurrentAqiConditionsRequestDto
+import com.bottlerocketstudios.launchpad.google.utils.data.model.airquality.CurrentConditionsFetchException
 import com.bottlerocketstudios.launchpad.google.utils.data.model.airquality.CurrentConditionsResponseDto
 import com.bottlerocketstudios.launchpad.google.utils.data.model.place.LatLngDto
 import com.bottlerocketstudios.launchpad.google.utils.data.network.HttpRoutes

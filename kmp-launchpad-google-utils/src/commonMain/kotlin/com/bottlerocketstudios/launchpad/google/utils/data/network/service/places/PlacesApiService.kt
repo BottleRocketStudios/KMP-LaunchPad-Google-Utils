@@ -5,6 +5,9 @@ import com.bottlerocketstudios.launchpad.google.utils.data.model.place.PlaceAuto
 import kotlinx.coroutines.flow.Flow
 
 interface PlacesApiService {
+
+    fun setApiKey(apiKey: String)
+
     suspend fun placesAutocomplete(textInput: String): Flow<List<PlaceAutocompleteResultModel>>
 
     suspend fun getPlaceLocationByPlaceId(placeId: String): Flow<LatLngDto>
