@@ -57,7 +57,7 @@ actual class PlacesApiServiceImpl : PlacesApiService, KoinComponent {
         try {
             // Make a POST request to the Google Places API autocomplete endpoint.
             val response: PlacePredictionResponseDto = client.post(
-                HttpRoutes.placesAutocompleteUrl
+                HttpRoutes.PLACES_AUTOCOMPLETE_URL
             ) {
                 contentType(ContentType.Application.Json)
                 header(PLACES_HEADER_API_KEY, apiKeyService.apiKey)
