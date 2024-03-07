@@ -8,7 +8,7 @@ ktor-coroutines = "1.8.0"
 
 android-compileSdk = "34"
 android-minSdk = "24"
-launchpad-google-utils = "0.0.1-Alpha01"
+launchpad-google-utils = "0.0.1"
 
 [libraries]
 
