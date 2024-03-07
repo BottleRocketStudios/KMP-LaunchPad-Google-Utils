@@ -24,21 +24,14 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kmp.launchpad.domain)
-            implementation(libs.kmp.launchpad.utils)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.ktor.serialization.json)
-            implementation(libs.koin.core)
-            implementation(libs.kvault)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.google.places)
-            implementation(libs.koin.android)
-            implementation(libs.koin.compose)
-            implementation(libs.play.services.coroutines)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -70,7 +63,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/BottleRocketStudios/KMP-LaunchPad-GoogleUtils")
+            url = uri("https://maven.pkg.github.com/BottleRocketStudios/KMP-LaunchPad-Google-Utils")
             credentials {
                 username = System.getenv("REPO_READ_WRITE_USER")
                 password = System.getenv("REPO_READ_WRITE_TOKEN")

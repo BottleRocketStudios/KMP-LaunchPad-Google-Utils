@@ -1,33 +1,19 @@
 [versions]
 agp = "8.2.2"
-google-places = "3.3.0"
 kmp-launchpad-domain = "0.0.4"
-kmp-launchpad-utils = "0.0.2"
-koin = "3.5.3"
 kotlin = "1.9.22"
-ktor = "2.3.8"
+ktor = "2.3.9"
 kt-lint-gradle = "11.6.1"
 ktor-coroutines = "1.8.0"
-kvault = "1.12.0"
-play-services-coroutines = "1.8.0"
 
 android-compileSdk = "34"
 android-minSdk = "24"
-launchpad-google-utils = "0.0.1"
+launchpad-google-utils = "0.0.1-Alpha01"
 
 [libraries]
-# Google
-google-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "google-places" }
-play-services-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "play-services-coroutines" }
 
 # Kotlin
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "ktor-coroutines" }
-
-#Koin
-koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
-koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
-koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
-
 # Ktor
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
@@ -36,12 +22,8 @@ ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-nego
 ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
-# KVault
-kvault = { group = "com.liftric", name = "kvault", version.ref = "kvault" }
-
 # Launchpad
 kmp-launchpad-domain = { group = "com.github.bottlerocketstudios", name = "kmp-launchpad-utils-domain", version.ref = "kmp-launchpad-domain" }
-kmp-launchpad-utils = { group = "com.github.bottlerocketstudios", name = "kmp-launchpad-utils", version.ref = "kmp-launchpad-utils" }
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
