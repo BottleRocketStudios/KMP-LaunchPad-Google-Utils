@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.launchpad.google.utils.network
+package com.bottlerocketstudios.launchpad.google.utils.network.ktor
 
 object HttpRoutes {
     // Air Quality

@@ -4,8 +4,8 @@ import com.bottlerocketstudios.launchpad.google.utils.model.airquality.AirQualit
 import com.bottlerocketstudios.launchpad.google.utils.model.airquality.CurrentAqiConditionsRequestDto
 import com.bottlerocketstudios.launchpad.google.utils.model.airquality.CurrentConditionsResponseDto
 import com.bottlerocketstudios.launchpad.google.utils.model.place.LatLngDto
-import com.bottlerocketstudios.launchpad.google.utils.network.HttpRoutes
-import com.bottlerocketstudios.launchpad.google.utils.network.ktorClient
+import com.bottlerocketstudios.launchpad.google.utils.network.ktor.HttpRoutes
+import com.bottlerocketstudios.launchpad.google.utils.network.ktor.ktorClient
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.post
@@ -19,7 +19,7 @@ import io.ktor.http.contentType
  * @property apiKey The API key to use for authentication.
  */
 class AirQualityApiService(
-    private val apiKey: String = ""
+    private val apiKey: String
 ) {
 
     private val client: HttpClient = ktorClient()
@@ -31,10 +31,13 @@ class AirQualityApiService(
      *
      * @param latitude The latitude of the location.
      * @param longitude The longitude of the location.
-     * @return A CurrentConditionsResponseDto object containing the current conditions.
+     * @return A CurrentConditionsResponseDto object containing the current air quality index conditions.
      * @throws AirQualityExceptions If there is an error fetching the current conditions.
      */
-    suspend fun getCurrentConditions(latitude: Double, longitude: Double): CurrentConditionsResponseDto {
+    suspend fun getCurrentAqiConditions(
+        latitude: Double,
+        longitude: Double
+    ): CurrentConditionsResponseDto {
         // Check if the API key is empty.
         if (apiKey.isEmpty()) {
             // Throw an exception if the API key is missing.

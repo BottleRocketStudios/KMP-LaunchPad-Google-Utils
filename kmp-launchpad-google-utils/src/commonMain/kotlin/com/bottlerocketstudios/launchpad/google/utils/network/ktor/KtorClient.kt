@@ -1,4 +1,4 @@
-package com.bottlerocketstudios.launchpad.google.utils.network
+package com.bottlerocketstudios.launchpad.google.utils.network.ktor
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
