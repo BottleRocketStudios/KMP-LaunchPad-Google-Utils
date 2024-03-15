@@ -23,7 +23,6 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kmp.launchpad.domain)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.content.negotiation)
@@ -50,10 +49,6 @@ android {
 ktlint {
     ignoreFailures.set(true)
     android.set(true)
-
-    filter {
-        exclude("**/generated/**")
-    }
 }
 
 group = extra["publishing.group"] as String

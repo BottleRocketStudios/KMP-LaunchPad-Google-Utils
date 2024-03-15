@@ -6,8 +6,8 @@ import com.bottlerocketstudios.launchpad.google.utils.model.place.PlaceLocationR
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlacePredictionResponseDto
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlacesAutocompleteRequestDto
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlacesException
-import com.bottlerocketstudios.launchpad.google.utils.network.HttpRoutes
-import com.bottlerocketstudios.launchpad.google.utils.network.ktorClient
+import com.bottlerocketstudios.launchpad.google.utils.network.ktor.HttpRoutes
+import com.bottlerocketstudios.launchpad.google.utils.network.ktor.ktorClient
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
