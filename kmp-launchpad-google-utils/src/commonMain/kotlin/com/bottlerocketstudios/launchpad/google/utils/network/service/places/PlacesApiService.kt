@@ -1,7 +1,7 @@
 package com.bottlerocketstudios.launchpad.google.utils.network.service.places
 
+import com.bottlerocketstudios.launchpad.google.utils.model.place.AutocompleteResult
 import com.bottlerocketstudios.launchpad.google.utils.model.place.LatLngDto
-import com.bottlerocketstudios.launchpad.google.utils.model.place.PlaceAutocompleteResultModel
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlaceLocationResponseDto
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlacePredictionResponseDto
 import com.bottlerocketstudios.launchpad.google.utils.model.place.PlacesAutocompleteRequestDto
@@ -33,10 +33,10 @@ class PlacesApiService(private val apiKey: String) {
      *
      * Documentation: https://developers.google.com/maps/documentation/places/web-service/place-autocomplete
      *
-     * @param textInput The user's input text.
-     * @return A flow of lists of [PlaceAutocompleteResultModel] objects.
+     * @param query The user's input text.
+     * @return A flow of lists of [AutocompleteResult] objects.
      */
-    suspend fun placesAutocomplete(textInput: String): Flow<List<PlaceAutocompleteResultModel>> {
+    suspend fun autocomplete(query: String): Flow<List<AutocompleteResult>> {
         // Check if the API key is empty.
         if (apiKey.isEmpty()) {
             // Throw an exception if the API key is missing.
@@ -52,7 +52,7 @@ class PlacesApiService(private val apiKey: String) {
                 header(PLACES_HEADER_API_KEY, apiKey)
                 setBody(
                     PlacesAutocompleteRequestDto(
-                        input = textInput
+                        input = query
                     )
                 )
             }.body()
@@ -60,7 +60,7 @@ class PlacesApiService(private val apiKey: String) {
             // Convert the suggestions in the response to a list of PlaceAutocompleteResultModel objects.
             return flowOf(
                 response.suggestions.map { suggestion ->
-                    PlaceAutocompleteResultModel(
+                    AutocompleteResult(
                         primaryText = suggestion.placePrediction?.structuredFormat?.mainText?.text.orEmpty(),
                         secondaryText = suggestion.placePrediction?.structuredFormat?.secondaryText?.text.orEmpty(),
                         placeId = suggestion.placePrediction?.placeId.orEmpty()
