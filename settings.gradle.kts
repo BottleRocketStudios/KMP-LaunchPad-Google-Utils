@@ -1,3 +1,5 @@
+rootProject.name = "LaunchPad_Google_Utils"
+
 pluginManagement {
     repositories {
         google()
@@ -13,5 +15,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LaunchPad_Google_Utils"
 include(":kmp-launchpad-google-utils")

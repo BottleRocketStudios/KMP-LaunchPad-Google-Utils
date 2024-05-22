@@ -1,13 +1,18 @@
 [versions]
+# Publishing version
+launchpad-google-utils = "0.1.0"
+
+# Android SDK versions
+android-compileSdk = "34"
+android-minSdk = "24"
+
+# Dependency versions
 agp = "8.2.2"
 kotlin = "1.9.22"
-ktor = "2.3.9"
+ktor = "2.3.10"
 kt-lint-gradle = "11.6.1"
 ktor-coroutines = "1.8.0"
 
-android-compileSdk = "34"
-android-minSdk = "24"
-launchpad-google-utils = "0.0.3"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "ktor-coroutines" }
