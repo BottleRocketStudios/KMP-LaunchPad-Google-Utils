@@ -8,14 +8,13 @@ plugins {
 
 kotlin {
     applyDefaultHierarchyTemplate()
+
     androidTarget {
         publishAllLibraryVariants()
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
     }
+    jvmToolchain(17)
+    jvm("desktop")
+    task("testClasses")
 
     iosX64()
     iosArm64()
